@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CapsuleMovement : MonoBehaviour
-{
-    // Donne une impulsion vers la droite au démarrage
+{ 
+    public float force = 400;
+    public float mass = 1;
     
     void Start()
     {
-        GetComponent<Rigidbody2D>().AddForce(Vector3.right * 400);
+        float acceleration = force / mass;
+        
+        GetComponent<Rigidbody2D>().AddForce(Vector3.right * acceleration);
     }
 }
