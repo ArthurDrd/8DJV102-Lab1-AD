@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CapsuleMovement : MonoBehaviour
 { 
-    public float force = 400;
+    public float acceleration= 400;
     public float mass = 1;
     
     void Start()
     {
-        float acceleration = force / mass;
+        float force = acceleration / mass;
         
-        GetComponent<Rigidbody2D>().AddForce(Vector3.right * acceleration);
+        GetComponent<Rigidbody2D>().AddForce(Vector3.right * force);
     }
 }
